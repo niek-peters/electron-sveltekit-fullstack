@@ -1,0 +1,18 @@
+{
+  "appId": "com.example.app",
+  "productName": "Electron SvelteKit Fullstack",
+  "directories": {
+    "output": "out"
+  },
+  "win": {
+    "target": ["nsis"],
+    "icon": "icon.ico"
+  },
+  "nsis": {
+    "installerIcon": "icon.ico",
+    "uninstallerIcon": "icon.ico",
+    "uninstallDisplayName": "Electron SvelteKit Fullstack",
+    "oneClick": false,
+    "allowToChangeInstallationDirectory": true
+  }
+}

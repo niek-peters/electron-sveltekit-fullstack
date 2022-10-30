@@ -1,15 +1,18 @@
 {
   "name": "electron-sveltekit-typescript",
-  "version": "1.0.0",
   "description": "A template for Electron with SvelteKit and TypeScript",
+  "version": "1.0.0",
+  "author": "Niek Peters",
+  "main": "./dist/main.js",
   "scripts": {
-    "dev": "concurrently -n=svelte,electron -c=orange,blue \"npm run svelte:dev\" \"npm run electron\"",
-    "build": "tsc",
-    "watch": "tsc -w",
-    "lint": "eslint -c .eslintrc --ext .ts ./src",
+    "dev": "cross-env NODE_ENV=dev concurrently -n=svelte,electron,electron-reloader -c=#ff3c00,blue,#1820c4 \"npm run svelte:dev\" \"npm run electron:dev\" \"npm run electron:watch\"",
+    "build": "npm run svelte:build && npm run electron:build && npm run electron:package",
     "svelte:dev": "cd svelte && npm run dev",
     "svelte:build": "cd svelte && npm run build",
-    "electron": "npm run build && electron ./dist/main.js"
+    "electron:dev": "npm run electron:build && electron ./electron/build/main.js",
+    "electron:build": "tsc",
+    "electron:watch": "tsc -w",
+    "electron:package": "electron-builder build --win --publish never --config build.config.json"
   },
   "devDependencies": {
     "@types/cors": "^2.8.12",
@@ -17,7 +20,9 @@
     "@typescript-eslint/eslint-plugin": "^4.33.0",
     "@typescript-eslint/parser": "^4.33.0",
     "concurrently": "^7.5.0",
+    "cross-env": "^7.0.3",
     "electron": "^21.2.0",
+    "electron-builder": "^23.6.0",
     "eslint": "^7.32.0",
     "typescript": "^4.8.3"
   },

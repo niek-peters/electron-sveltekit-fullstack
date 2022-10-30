@@ -56,10 +56,8 @@ function createWindow() {
   });
 
   const handleRedirect = (e: Event, url: string) => {
-    // if (url !== e.sender.getURL()) {
     e.preventDefault();
     shell.openExternal(url);
-    // }
   };
 
   mainWindow.webContents.on("will-navigate", handleRedirect);

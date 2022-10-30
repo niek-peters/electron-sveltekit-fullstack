@@ -12,7 +12,11 @@ const config = {
 	],
 
 	kit: {
-		adapter: adapter()
+		adapter: adapter({
+			pages: '../dist/www',
+			assets: '../dist/www'
+		}),
+		trailingSlash: 'always'
 	}
 };
 
