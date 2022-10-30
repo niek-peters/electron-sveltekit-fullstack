@@ -15,7 +15,7 @@ try {
   console.error(e);
 }
 
-const serveURL = serve({ directory: "." });
+const serveURL = serve({ directory: "dist/www" });
 const port = process.env.PORT || 5173;
 const dev = !app.isPackaged;
 
