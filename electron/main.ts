@@ -22,15 +22,12 @@ const dev = !app.isPackaged;
 let mainWindow: BrowserWindow | null;
 
 function createWindow() {
-  const windowState = windowStateManager({
-    defaultWidth: 800,
-    defaultHeight: 600,
-  });
+  const windowState = windowStateManager({});
 
   const mainWindow = new BrowserWindow({
     autoHideMenuBar: true,
-    minHeight: 450,
-    minWidth: 500,
+    minWidth: 1400,
+    minHeight: 800,
     webPreferences: {
       contextIsolation: true,
       nodeIntegration: true,

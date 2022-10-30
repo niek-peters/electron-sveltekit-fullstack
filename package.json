@@ -9,7 +9,7 @@
     "build": "npm run svelte:build && npm run electron:build && npm run electron:package",
     "svelte:dev": "cd svelte && npm run dev",
     "svelte:build": "cd svelte && npm run build",
-    "electron:dev": "npm run electron:build && electron ./electron/build/main.js",
+    "electron:dev": "npm run electron:build && electron ./dist/main.js",
     "electron:build": "tsc",
     "electron:watch": "tsc -w",
     "electron:package": "electron-builder build --win --publish never --config build.config.json"
