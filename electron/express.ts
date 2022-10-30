@@ -13,6 +13,6 @@ app.use(express.json());
 app.use("/api/test", testRouter);
 
 const port = 3000;
-app.listen(port, () => {
+export const server = app.listen(port, () => {
   console.log(`API is listening on port ${port}...`);
 });

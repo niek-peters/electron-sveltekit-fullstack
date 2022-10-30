@@ -6,6 +6,7 @@ import * as path from "path";
 
 // Load express server
 import "./express";
+import { server } from "./express";
 
 app.disableHardwareAcceleration();
 
@@ -90,7 +91,10 @@ app.on("activate", () => {
   }
 });
 app.on("window-all-closed", () => {
-  if (process.platform !== "darwin") app.quit();
+  if (process.platform !== "darwin") {
+    app.quit();
+    server.close();
+  }
 });
 
 ipcMain.on("to-main", (_event, count) => {
