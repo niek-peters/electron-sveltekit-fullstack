@@ -27,17 +27,17 @@ It also includes a script for building your app for Windows, which generates an 
 
 To change what your app will be called when installed, what author it will have and what icon it will display, you have to change a few things.
 
-## Change App Name
+### Change App Name
 
 Update the `appId`, `productName` and `uninstallDisplayName` fields in the <ins>build.config.json</ins> file.
 Update the `<title>` tag in the <ins>svelte/src/app.html</ins> file.
 Update the `name` and `description` fields in the <ins>package.json</ins> file.
 
-## Change App Author
+### Change App Author
 
 Update the `author` field in the <ins>package.json</ins> file.
 
-## Change App Icon
+### Change App Icon
 
 Replace the <ins>icon.ico</ins> file with an icon of your own. Note: Don't rename a .png file to .ico, use a [converter like this one](https://convertio.co/nl/png-ico/) instead.
 
